@@ -7,4 +7,15 @@ describe   ("OrangeHRM", () => {
         await logintest.enterPassword("admin123");
         await logintest.clickLogin();
     });
+
+    beforeEach(async () => {
+        console.log("=============Starting a new test case==================");
+        console.log("=============Runninh in chrome browser===============");
+    });
+
+    afterEach(async () => {
+        console.log("=============Test case completed======================");
+        console.log("=============Closing the browser=====================");
+      
+    });
 })

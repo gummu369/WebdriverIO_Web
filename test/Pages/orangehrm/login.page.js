@@ -18,11 +18,11 @@ class LoginPageOrangeHRM {
     }
 
     async enterUsername(username) {
-        await Actions.setValue(this.usernameInput, username, 'username input');
+        await Actions.setValue(this.usernameInput, username, username);
     }
 
     async enterPassword(password) {
-        await Actions.setValue(this.passwordInput, password, 'password input');
+        await Actions.setValue(this.passwordInput, password, password);
     }
 
     async clickLogin() {
