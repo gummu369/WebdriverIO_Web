@@ -1,3 +1,5 @@
+const Actions = require('../../utils/actions');
+
 class LoginPage
 { 
     get userNameInput() {
@@ -12,14 +14,14 @@ class LoginPage
 
 
     async setUsername(username) {
-        await this.userNameInput.setValue(username);
+        await Actions.setValue(this.userNameInput, username, 'username input');
        
     }
     async setPassword(password) {
-        await this.passwordInput.setValue(password);
+        await Actions.setValue(this.passwordInput, password, 'password input');
     }
     async clickLoginButton() {
-        await this.loginButton.click();
+        await Actions.click(this.loginButton, 'login button');
     }
     
 }

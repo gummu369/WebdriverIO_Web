@@ -1,3 +1,5 @@
+const Actions = require('../../utils/actions');
+
 class LoginPageOrangeHRM {
     get usernameInput() {
         return $('[name="username"]');
@@ -11,22 +13,21 @@ class LoginPageOrangeHRM {
         return $('[type="submit"]');
     }
 
-   
     async open() {
         await browser.url('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     }
 
     async enterUsername(username) {
-        await this.usernameInput.setValue(username);
+        await Actions.setValue(this.usernameInput, username, 'username input');
     }
-    async enterPassword( password) {
-       
-        await this.passwordInput.setValue(password);
-   
+
+    async enterPassword(password) {
+        await Actions.setValue(this.passwordInput, password, 'password input');
     }
+
     async clickLogin() {
-       
-        await this.loginButton.click();
+        await Actions.click(this.loginButton, 'login button');
     }
-} 
+}
+
 module.exports = new LoginPageOrangeHRM();
